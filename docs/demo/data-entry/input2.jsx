@@ -6,6 +6,7 @@ export default () => {
     <Input
       value={value}
       placeholder="姓名"
+      addonAfter={'账户'}
       onChange={e => {
         setvalue(null, e.target.value);
       }}

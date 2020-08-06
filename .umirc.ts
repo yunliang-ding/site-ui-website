@@ -2,6 +2,8 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   title: 'Site-UI',
   mode: 'site',
+  hash: true,
+  history: { type: 'hash' },
   extraBabelPlugins: [
     [
       'import',

@@ -3,8 +3,8 @@ hero:
   title: Site-UI
   desc: 配置化基础表单页面
   actions:
-    - text: 快速上手
-      link: /getting-started
+    - text: 组件
+      link: /components
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
     title: 表单校验

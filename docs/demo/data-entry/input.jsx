@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Input } from 'site-ui';
 export default () => {
-  const [value, setvalue] = useState();
   return (
-    <Input
-      value={value}
-      placeholder="姓名"
-      onChange={e => {
-        setvalue(null, e.target.value);
-      }}
-    />
+    <>
+      <Input placeholder="姓名" />
+      <Input placeholder="姓名" disabled style={{ marginTop: 20 }} />
+      <Input placeholder="姓名" style={{ width: 300, marginTop: 20 }} />
+      <Input
+        placeholder="姓名"
+        style={{ width: 300, marginTop: 20 }}
+        allowClear
+      />
+    </>
   );
 };

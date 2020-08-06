@@ -6,11 +6,13 @@ nav:
 
 # Input
 
-<code src="./demo/data-entry/input.jsx" />
+<code src="./demo/data-entry/input.jsx" title='基本使用' />
 
-<code src="./demo/data-entry/input1.jsx" />
+<code src="./demo/data-entry/input1.jsx" title='前后缀' />
 
-<code src="./demo/data-entry/input2.jsx" />
+<code src="./demo/data-entry/input2.jsx" title='内联前后缀' />
+
+<code src="./demo/data-entry/input3.jsx" title='多行文本' />
 
 # API
 
@@ -29,3 +31,4 @@ nav:
 | onPressEnter | function(e) | 按下回车的回调           | 无       |
 | onBlur       | function(e) | 输入框得到焦点           | 无       |
 | onFocus      | function(e) | 输入框失去焦点           | 无       |
+| style        | Object      | 样式                     | 无       |

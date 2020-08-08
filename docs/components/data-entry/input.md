@@ -2,7 +2,7 @@
 order: 1
 ---
 
-# Input
+# Input 输入框
 
 ```jsx
 /**
@@ -16,6 +16,11 @@ export default () => {
       <Input placeholder="普通输入框" />
       <Input placeholder="禁止" disabled style={{ marginTop: 20 }} />
       <Input placeholder="指定宽度" style={{ width: 300, marginTop: 20 }} />
+      <Input
+        placeholder="指定长度11位"
+        style={{ width: 300, marginTop: 20 }}
+        maxLength={11}
+      />
     </>
   );
 };
@@ -68,7 +73,9 @@ export default () => {
       />
       <Input
         placeholder="发送到"
-        prefix={<Icon size={18} type="iconduihao" style={{ color: 'green' }} />}
+        prefix={
+          <Icon size={18} type="iconduihao" style={{ color: '#4569d4' }} />
+        }
         suffix={'.com'}
         style={{ marginTop: 20, width: 300 }}
       />

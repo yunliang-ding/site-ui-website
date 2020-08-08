@@ -18,4 +18,16 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
 
-## site-ui
+# 配置主题色
+
+```less
+@primary-color: #4569d4;
+@primary-box-shadow: #d8e2fc;
+@font-size-base: 12px; // 主字号
+@border-color-base: #f2f2f2; // 边框色
+@heading-color: rgba(0, 0, 0, 0.85); // 标题色
+@text-color: rgba(0, 0, 0, 0.65); // 主文本色
+@disabled-color: rgba(0, 0, 0, 0.05); // 失效色
+@box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // 浮层阴影
+@border-radius-base: 2px; // 组件/浮层圆角
+```

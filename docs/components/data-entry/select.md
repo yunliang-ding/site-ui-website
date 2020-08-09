@@ -76,22 +76,16 @@ export default () => {
 
 ```jsx
 /**
- * title: 带搜索框
+ * title: 带搜索框-自定义规则
  */
 import React, { useState } from 'react';
 import { Select } from 'site-ui';
 export default () => {
-  const [options, setoptions] = useState([
-    'Html',
-    'Css',
-    'Java',
-    'React',
-    'Vue',
-  ]);
-  const [value, setvalue] = useState();
+  const options = ['Html', 'Css', 'Java', 'React', 'Vue'];
   const onSearch = value => {
     console.log('onSearch', value);
   };
+  const [value, setvalue] = useState();
   const onChange = (value, option) => {
     setvalue(value);
   };

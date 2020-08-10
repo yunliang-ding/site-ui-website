@@ -11,15 +11,10 @@ order: 2
 import React from 'react';
 import { Checkbox } from 'site-ui';
 export default () => {
-  const onChange = e => {
-    console.log(`checked is ${e.target.checked}`);
-  };
   return (
     <>
-      <Checkbox onChange={onChange}>Checkbox</Checkbox>
-      <Checkbox onChange={onChange} checked>
-        Default Checked
-      </Checkbox>
+      <Checkbox>Checkbox</Checkbox>
+      <Checkbox checked>Default Checked</Checkbox>
     </>
   );
 };
@@ -77,30 +72,31 @@ export default () => {
 /**
  * title: 组多选部分禁用
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { CheckboxGroup } from 'site-ui';
 export default () => {
   const options = [
     {
       label: 'A',
       value: 'A',
-      disabled: true,
     },
     {
       label: 'B',
       value: 'B',
+      disabled: true,
+    },
+    {
+      label: 'C',
+      value: 'C',
+    },
+    {
+      label: 'D',
+      value: 'D',
     },
   ];
-  const [value, setvalue] = useState();
   return (
     <>
-      <CheckboxGroup
-        options={options}
-        value={value}
-        onChange={value => {
-          setvalue(value);
-        }}
-      />
+      <CheckboxGroup options={options} />
     </>
   );
 };

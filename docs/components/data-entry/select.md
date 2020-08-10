@@ -12,16 +12,9 @@ import React, { useState } from 'react';
 import { Select } from 'site-ui';
 export default () => {
   const options = ['Html', 'Css', 'Java', 'React', 'Vue'];
-  const [value, setvalue] = useState('React');
-  const onChange = (value, option) => {
-    setvalue(value);
-    console.log('selected option is', option);
-  };
   return (
     <>
-      <Select onChange={onChange} options={options} value={value} />
-      &nbsp;&nbsp;&nbsp;
-      <Select onChange={onChange} options={options} value={value} disabled />
+      <Select placeholder="请选择" options={options} />
     </>
   );
 };
@@ -69,6 +62,8 @@ export default () => {
         options={options}
         value={value}
       />
+      &nbsp;&nbsp;&nbsp;
+      <Select placeholder="请选择" disabled options={options} value={value} />
     </>
   );
 };

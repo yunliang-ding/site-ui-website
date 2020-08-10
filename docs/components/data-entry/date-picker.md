@@ -14,7 +14,7 @@ export default () => {
   return (
     <>
       <DatePicker
-        style={{ width: 300 }}
+        style={{ width: 200 }}
         placeholder="选择日期"
         onChanege={e => {
           console.log(e);

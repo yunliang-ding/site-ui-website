@@ -57,9 +57,9 @@ import { Button, Icon } from 'site-ui';
 export default () => {
   const [loading, setloading] = useState();
   return (
-    <>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Button type="primary" loading></Button>
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
       <Button
         type="primary"
         loading={loading}
@@ -73,7 +73,7 @@ export default () => {
       >
         {loading ? 'Submit...' : 'Click Me'}
       </Button>
-    </>
+    </div>
   );
 };
 ```

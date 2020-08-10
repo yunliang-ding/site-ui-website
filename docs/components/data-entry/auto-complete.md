@@ -35,7 +35,7 @@ export default () => {
 
 | **属性名**        | **类型**                | **描述**              | **默认** |
 | ----------------- | ----------------------- | --------------------- | -------- |
-| value             | string/string[]         | 指定当前选中的条目    | 无       |
+| value             | string                  | 指定当前选中的条目    | 无       |
 | dataSource        | string[]                | 下拉选项              | 无       |
 | placeholder       | string                  | 提示文案              | 无       |
 | allowClear        | boolean                 | 支持清除              | false    |

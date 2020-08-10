@@ -98,6 +98,7 @@ export default () => {
         onChange={onChange}
         options={options}
         value={value}
+        style={{ width: 200 }}
       />
       &nbsp;&nbsp;&nbsp;
       <Select
@@ -110,6 +111,7 @@ export default () => {
         onChange={onChange}
         options={options}
         value={value}
+        style={{ width: 200 }}
       />
     </>
   );
@@ -155,8 +157,6 @@ export default () => {
 ```
 
 # API
-
-# Select
 
 | **属性名**           | **类型**                          | **描述**                            | **默认** |
 | -------------------- | --------------------------------- | ----------------------------------- | -------- |

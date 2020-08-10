@@ -14,13 +14,12 @@ export default () => {
   return (
     <>
       <Input placeholder="普通输入框" />
-      <Input placeholder="禁止" disabled style={{ marginTop: 20 }} />
-      <Input placeholder="指定宽度" style={{ width: 300, marginTop: 20 }} />
-      <Input
-        placeholder="指定长度11位"
-        style={{ width: 300, marginTop: 20 }}
-        maxLength={11}
-      />
+      <br />
+      <Input placeholder="禁止" disabled />
+      <br />
+      <Input placeholder="指定宽度" style={{ width: 300 }} />
+      <br />
+      <Input placeholder="指定长度11位" style={{ width: 300 }} maxLength={11} />
     </>
   );
 };
@@ -36,16 +35,17 @@ export default () => {
   return (
     <>
       <Input placeholder="姓名" addonBefore={'姓名'} />
-      <Input placeholder="密码" addonAfter="密码" style={{ marginTop: 20 }} />
+      <br />
+      <Input placeholder="密码" addonAfter="密码" />
+      <br />
       <Input
         placeholder="超过文本的字符看不到"
         addonBefore={'超过文本的字符看不到'}
-        style={{ marginTop: 20 }}
       />
+      <br />
       <Input
         placeholder="超过文本的字符看不到"
         addonAfter={'超过文本的字符看不到'}
-        style={{ marginTop: 20 }}
       />
     </>
   );
@@ -64,20 +64,38 @@ export default () => {
       <Input
         placeholder="邮箱"
         prefix={<Icon size={18} type="iconweimingmingwenjianjia_rili" />}
-        style={{ width: 300 }}
       />
-      <Input
-        placeholder="查找"
-        suffix={<Icon type="iconsearchicon" />}
-        style={{ marginTop: 20, width: 300 }}
-      />
+      <br />
+      <Input placeholder="查找" suffix={<Icon type="iconsearchicon" />} />
+      <br />
       <Input
         placeholder="发送到"
         prefix={
           <Icon size={18} type="iconduihao" style={{ color: '#4569d4' }} />
         }
         suffix={'.com'}
-        style={{ marginTop: 20, width: 300 }}
+      />
+    </>
+  );
+};
+```
+
+```jsx
+/**
+ * title: 支持清除
+ */
+import React from 'react';
+import { Input, Icon } from 'site-ui';
+export default () => {
+  return (
+    <>
+      <Input placeholder="支持清除" style={{ width: 300 }} allowClear />
+      <br />
+      <Input
+        placeholder="支持清除"
+        suffix={<Icon type="iconweimingmingwenjianjia_rili" />}
+        style={{ width: 300 }}
+        allowClear
       />
     </>
   );
@@ -107,27 +125,6 @@ export default () => (
     />
   </>
 );
-```
-
-```jsx
-/**
- * title: 支持清除
- */
-import React from 'react';
-import { Input, Icon } from 'site-ui';
-export default () => {
-  return (
-    <>
-      <Input placeholder="支持清除" style={{ width: 300 }} allowClear />
-      <Input
-        placeholder="支持清除"
-        suffix={<Icon type="iconweimingmingwenjianjia_rili" />}
-        style={{ width: 300, marginTop: 20 }}
-        allowClear
-      />
-    </>
-  );
-};
 ```
 
 # API

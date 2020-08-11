@@ -63,7 +63,13 @@ export default () => {
         value={value}
       />
       &nbsp;&nbsp;&nbsp;
-      <Select placeholder="请选择" disabled options={options} value={value} />
+      <Select
+        placeholder="请选择"
+        allowClear
+        disabled
+        options={options}
+        value={value}
+      />
     </>
   );
 };
@@ -118,7 +124,7 @@ export default () => {
  * title: 下拉多选
  */
 import React, { useState } from 'react';
-import { Select } from 'site-ui';
+import { Select, Checkbox } from 'site-ui';
 export default () => {
   const options = ['Html', 'Css', 'Java', 'React', 'Vue'];
   const [value, setvalue] = useState(['Css', 'React']);
@@ -128,24 +134,37 @@ export default () => {
   };
   return (
     <>
-      <Select
-        multiple
-        style={{ width: 300 }}
-        placeholder="请选择"
-        onChange={onChange}
-        options={options}
-        value={value}
-      />
-      &nbsp;&nbsp;&nbsp;
-      <Select
-        multiple
-        allowClear
-        style={{ width: 300 }}
-        placeholder="请选择"
-        onChange={onChange}
-        options={options}
-        value={value}
-      />
+      <Checkbox
+        onChange={e => {
+          setvalue(
+            e.target.checked ? ['Html', 'Css', 'Java', 'React', 'Vue'] : [],
+          );
+        }}
+      >
+        Select All
+      </Checkbox>
+      <br />
+      <br />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Select
+          multiple
+          style={{ width: 300 }}
+          placeholder="请选择"
+          onChange={onChange}
+          options={options}
+          value={value}
+        />
+        &nbsp;&nbsp;&nbsp;
+        <Select
+          multiple
+          allowClear
+          style={{ width: 300 }}
+          placeholder="请选择"
+          onChange={onChange}
+          options={options}
+          value={value}
+        />
+      </div>
     </>
   );
 };

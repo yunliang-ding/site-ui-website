@@ -78,20 +78,20 @@ export default () => {
   const options = [
     {
       label: 'A',
-      value: 'A',
+      value: 0,
     },
     {
       label: 'B',
-      value: 'B',
+      value: 1,
       disabled: true,
     },
     {
       label: 'C',
-      value: 'C',
+      value: 2,
     },
     {
       label: 'D',
-      value: 'D',
+      value: 3,
     },
   ];
   return (

@@ -26,7 +26,6 @@ export default () => {
         style={{ width: 200 }}
         value="2020-08-12"
         placeholder="选择日期"
-        allowClear
         onChange={e => {
           console.log('value is', e);
         }}
@@ -36,7 +35,6 @@ export default () => {
         style={{ width: 200 }}
         value="2020-08-12"
         placeholder="选择日期"
-        allowClear
         onChange={e => {
           console.log('value is', e);
         }}
@@ -60,7 +58,6 @@ export default () => {
         addonBefore={'开始时间'}
         style={{ width: 300 }}
         placeholder="选择日期"
-        allowClear
         onChange={e => {
           console.log('value is', e);
         }}
@@ -70,7 +67,6 @@ export default () => {
         addonBefore={'结束时间'}
         style={{ width: 300 }}
         placeholder="选择日期"
-        allowClear
         onChange={e => {
           console.log('value is', e);
         }}
@@ -87,7 +83,7 @@ export default () => {
 | ------------ | ----------------------- | ------------------ | -------- |
 | value        | string                  | 指定当前选中的条目 | 无       |
 | placeholder  | string                  | 提示文案           | 无       |
-| allowClear   | boolean                 | 支持清除           | false    |
+| allowClear   | boolean                 | 支持清除           | true     |
 | style        | object                  | 输入框 style 属性  | 无       |
 | onChange     | function(value, option) | 选中 option        | 无       |
 | addonAfter   | ReactNode               | 设置前置标签       | 无       |

@@ -46,19 +46,17 @@ export default () => {
  * title: 禁用状态
  */
 import React, { useState } from 'react';
-import { Switch } from 'site-ui';
+import { Switch, Button } from 'site-ui';
 export default () => {
   const [disabled, setdisabled] = useState(true);
   return (
     <>
       <Switch disabled={disabled} />
-      &nbsp;&nbsp;&nbsp;
-      <a
-        style={{ color: '#1890ff', fontSize: 12, cursor: 'pointer' }}
-        onClick={setdisabled.bind(null, !disabled)}
-      >
+      <br />
+      <br />
+      <Button type="primary" onClick={setdisabled.bind(null, !disabled)}>
         Toogle
-      </a>
+      </Button>
     </>
   );
 };

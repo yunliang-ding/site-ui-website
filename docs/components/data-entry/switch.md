@@ -64,7 +64,7 @@ export default () => {
 
 ```jsx
 /**
- * title:加载状态
+ * title: 加载状态
  */
 import React, { useState } from 'react';
 import { Switch } from 'site-ui';

@@ -24,6 +24,7 @@ export default () => {
             setvalue(value);
           }}
         />
+        &nbsp;&nbsp;&nbsp;
         <Input
           value={value}
           disabled={disabled}

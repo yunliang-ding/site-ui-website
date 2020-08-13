@@ -8,18 +8,33 @@ order: 1
 /**
  * title: 基本使用
  */
-import React from 'react';
-import { Input } from 'site-ui';
+import React, { useState } from 'react';
+import { Input, Switch } from 'site-ui';
 export default () => {
+  const [disabled, setdisabled] = useState('');
   return (
     <>
-      <Input placeholder="普通输入框" />
+      <Input disabled={disabled} placeholder="普通输入框" />
       <br />
-      <Input placeholder="禁止" disabled />
+      <Input
+        disabled={disabled}
+        placeholder="指定宽度"
+        style={{ width: 300 }}
+      />
       <br />
-      <Input placeholder="指定宽度" style={{ width: 300 }} />
+      <Input
+        disabled={disabled}
+        placeholder="指定长度11位"
+        style={{ width: 300 }}
+        maxLength={11}
+      />
       <br />
-      <Input placeholder="指定长度11位" style={{ width: 300 }} maxLength={11} />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
     </>
   );
 };

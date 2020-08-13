@@ -9,7 +9,7 @@ order: 9
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Slider, Input, Switch } from 'site-ui';
+import { Slider, InputNumber, Switch } from 'site-ui';
 export default () => {
   const [value, setvalue] = useState(30);
   const [disabled, setdisabled] = useState(false);
@@ -25,12 +25,12 @@ export default () => {
           }}
         />
         &nbsp;&nbsp;&nbsp;
-        <Input
+        <InputNumber
           value={value}
           disabled={disabled}
           style={{ width: 60 }}
-          onChange={e => {
-            setvalue(e.target.value);
+          onChange={value => {
+            setvalue(value);
           }}
         />
       </div>

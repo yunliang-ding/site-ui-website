@@ -9,10 +9,11 @@ order: 1
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { AutoComplete } from 'site-ui';
+import { AutoComplete, Switch } from 'site-ui';
 export default () => {
   const dataSource = ['@163.com', '@qq.com', '@aliyun.com'];
   const [value, setvalue] = useState('');
+  const [disabled, setdisabled] = useState('');
   const onSelect = value => {
     setvalue(value);
   };
@@ -25,6 +26,15 @@ export default () => {
         placeholder="请输入邮箱"
         onSelect={onSelect}
         value={value}
+        disabled={disabled}
+      />
+      <br />
+      <br />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
       />
     </>
   );

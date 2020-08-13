@@ -8,24 +8,16 @@ order: 7
 /**
  * title: 基本使用
  */
-import React from 'react';
-import { DatePicker, Button } from 'site-ui';
+import React, { useState } from 'react';
+import { DatePicker, Button, Switch } from 'site-ui';
 export default () => {
+  const [disabled, setdisabled] = useState(false);
   return (
     <>
       <DatePicker
         style={{ width: 200 }}
         placeholder="选择日期"
-        onChange={e => {
-          console.log('value is', e);
-        }}
-      />
-      <br />
-      <DatePicker
-        disabled
-        style={{ width: 200 }}
-        value="2020-08-12"
-        placeholder="选择日期"
+        disabled={disabled}
         onChange={e => {
           console.log('value is', e);
         }}
@@ -35,43 +27,18 @@ export default () => {
         style={{ width: 200 }}
         value="2020-08-12"
         placeholder="选择日期"
+        disabled={disabled}
         onChange={e => {
           console.log('value is', e);
         }}
       />
       <br />
-    </>
-  );
-};
-```
-
-```jsx
-/**
- * title: 前缀后缀
- */
-import React from 'react';
-import { DatePicker, Button } from 'site-ui';
-export default () => {
-  return (
-    <>
-      <DatePicker
-        addonBefore={'开始时间'}
-        style={{ width: 300 }}
-        placeholder="选择日期"
-        onChange={e => {
-          console.log('value is', e);
-        }}
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
       />
-      <br />
-      <DatePicker
-        addonBefore={'结束时间'}
-        style={{ width: 300 }}
-        placeholder="选择日期"
-        onChange={e => {
-          console.log('value is', e);
-        }}
-      />
-      <br />
     </>
   );
 };

@@ -9,7 +9,7 @@ order: 8
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Cascader, Checkbox } from 'site-ui';
+import { Cascader, Switch } from 'site-ui';
 export default () => {
   const options = [
     {
@@ -64,13 +64,12 @@ export default () => {
       />
       <br />
       <br />
-      <Checkbox
-        onChange={e => {
-          setdisabled(e.target.checked);
-        }}
-      >
-        设置禁用
-      </Checkbox>
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
     </>
   );
 };

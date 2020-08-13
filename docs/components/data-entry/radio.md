@@ -8,15 +8,26 @@ order: 3
 /**
  * title: 基本使用
  */
-import React from 'react';
-import { Radio } from 'site-ui';
+import React, { useState } from 'react';
+import { Radio, Switch } from 'site-ui';
 export default () => {
+  const [disabled, setdisabled] = useState();
   const onChange = e => {
     console.log(`checked is ${e.target.checked}`);
   };
   return (
     <>
-      <Radio onChange={onChange}>Radio</Radio>
+      <Radio disabled={disabled} onChange={onChange}>
+        Radio
+      </Radio>
+      <br />
+      <br />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
     </>
   );
 };
@@ -32,24 +43,6 @@ export default () => {
   return (
     <>
       <Radio checked>Radio</Radio>
-    </>
-  );
-};
-```
-
-```jsx
-/**
- * title: 失效状态
- */
-import React from 'react';
-import { Radio } from 'site-ui';
-export default () => {
-  return (
-    <>
-      <Radio disabled>Disabled</Radio>
-      <Radio disabled checked>
-        Disabled Checked
-      </Radio>
     </>
   );
 };

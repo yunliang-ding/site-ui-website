@@ -8,31 +8,24 @@ order: 2
 /**
  * title: 基本使用
  */
-import React from 'react';
-import { Checkbox } from 'site-ui';
+import React, { useState } from 'react';
+import { Checkbox, Switch } from 'site-ui';
 export default () => {
+  const [disabled, setdisabled] = useState('');
   return (
     <>
-      <Checkbox>Checkbox</Checkbox>
-      <Checkbox checked>Default Checked</Checkbox>
-    </>
-  );
-};
-```
-
-```jsx
-/**
- * title: 失效状态
- */
-import React from 'react';
-import { Checkbox } from 'site-ui';
-export default () => {
-  return (
-    <>
-      <Checkbox disabled>Disabled</Checkbox>
-      <Checkbox disabled checked>
-        Checked Disabled
+      <Checkbox disabled={disabled}>Checkbox</Checkbox>
+      <Checkbox disabled={disabled} checked>
+        Default Checked
       </Checkbox>
+      <br />
+      <br />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
     </>
   );
 };

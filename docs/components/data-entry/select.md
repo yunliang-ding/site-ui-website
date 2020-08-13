@@ -9,12 +9,21 @@ order: 5
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Select } from 'site-ui';
+import { Select, Switch } from 'site-ui';
 export default () => {
   const options = ['Html', 'Css', 'Java', 'React', 'Vue'];
+  const [disabled, setdisabled] = useState(false);
   return (
     <>
-      <Select placeholder="请选择" options={options} />
+      <Select disabled={disabled} placeholder="请选择" options={options} />
+      <br />
+      <br />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
     </>
   );
 };
@@ -59,14 +68,6 @@ export default () => {
         placeholder="请选择"
         allowClear
         onChange={onChange}
-        options={options}
-        value={value}
-      />
-      &nbsp;&nbsp;&nbsp;
-      <Select
-        placeholder="请选择"
-        allowClear
-        disabled
         options={options}
         value={value}
       />

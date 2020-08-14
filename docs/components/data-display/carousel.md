@@ -8,7 +8,6 @@ import React from 'react';
 import { Carousel, Icon } from 'site-ui';
 export default () => {
   const style = {
-    background: '@primary-color',
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -55,7 +54,6 @@ import React from 'react';
 import { Carousel, Icon } from 'site-ui';
 export default () => {
   const style = {
-    background: '@primary-color',
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -104,5 +102,5 @@ export default () => {
 | effect      | string               | 模式：fade     | 无       |
 | currentPage | number               | 当前页码       | 1        |
 | onChange    | funcito(currentPage) | 页码改变的回调 | 无       |
-| autoplay    | boolean              | 自动播放       | false    |
+| autoPlay    | boolean              | 自动播放       | false    |
 | showArrow   | boolean              | 展示箭头       | false    |

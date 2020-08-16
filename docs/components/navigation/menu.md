@@ -12,6 +12,7 @@ import React, { useState } from 'react';
 import { Menu, Icon, Switch } from 'site-ui';
 export default () => {
   const [collapsed, setcollapsed] = useState();
+  const [theme, settheme] = useState('light');
   const menus = [
     {
       key: '1',
@@ -32,7 +33,7 @@ export default () => {
     {
       key: '2',
       icon: 'iconhezi',
-      label: 'Navigation Two',
+      label: 'Navigation Two Navigation Two',
       children: [
         {
           key: '2-1',
@@ -41,6 +42,7 @@ export default () => {
             {
               key: '2-1-1',
               label: 'Sub-Option1',
+              icon: 'iconempty',
               children: [
                 {
                   key: '2-1-1-1',
@@ -88,9 +90,16 @@ export default () => {
         unCheckedChildren="收起"
         onChange={setcollapsed.bind(null, !collapsed)}
       />
+      &nbsp;&nbsp;&nbsp;
+      <Switch
+        checkedChildren="light"
+        unCheckedChildren="dark"
+        onChange={settheme.bind(null, theme === 'dark' ? 'light' : 'dark')}
+      />
       <Menu
-        style={{ width: 200, marginTop: 10 }}
+        style={{ width: 240, margin: '10px 0' }}
         menus={menus}
+        theme={theme}
         collapsed={collapsed}
         menuClick={(openkey, selectKey) => {
           console.log(openkey, selectKey);

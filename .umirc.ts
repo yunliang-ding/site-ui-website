@@ -13,8 +13,8 @@ export default defineConfig({
       },
     ],
   ],
-  logo: '/assets/ui.png',
-  favicon: '/assets/ui.png',
+  logo: '/assets/logo.png',
+  favicon: '/assets/logo.png',
   locales: [],
   navs: [
     null,

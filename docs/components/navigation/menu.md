@@ -9,42 +9,49 @@ order: 1
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Menu, Icon } from 'site-ui';
+import { Menu, Icon, Switch } from 'site-ui';
 export default () => {
+  const [collapsed, setcollapsed] = useState();
   const menus = [
     {
       key: '1',
-      icon: 'iconweimingmingwenjianjia_rili',
-      label: '用户管理',
+      icon: 'iconicon_yingyongguanli',
+      label: 'Navigation One',
       children: [
         {
           key: '1-1',
-          label: '我的信息1',
+          icon: 'iconmessage',
+          label: 'Option1',
         },
         {
           key: '1-2',
-          label: '我的信息2',
+          label: 'Option2',
         },
       ],
     },
     {
       key: '2',
-      icon: 'iconweimingmingwenjianjia_rili',
-      label: '个人中心',
+      icon: 'iconhezi',
+      label: 'Navigation Two',
       children: [
         {
           key: '2-1',
-          label: '我的信息',
+          label: 'Option1',
           children: [
             {
               key: '2-1-1',
-              label: '信息中心',
+              label: 'Sub-Option1',
               children: [
                 {
                   key: '2-1-1-1',
-                  label: '管理信息',
+                  label: 'Sub-Option1-Option1',
                 },
               ],
+            },
+            {
+              key: '2-1-2',
+              label: 'Sub-Option2',
+              disabled: true,
             },
           ],
         },
@@ -52,25 +59,43 @@ export default () => {
     },
     {
       key: '3',
-      icon: 'iconweimingmingwenjianjia_rili',
-      label: '信息维护',
+      icon: 'iconjiaohu',
+      label: 'Navigation Three',
       children: [
         {
           key: '3-1',
-          label: '我的信息',
+          label: 'Option1',
+        },
+      ],
+    },
+    {
+      key: '4',
+      disabled: true,
+      icon: 'iconcloud-form',
+      label: 'Navigation Four',
+      children: [
+        {
+          key: '4-1',
+          label: 'Option1',
         },
       ],
     },
   ];
   return (
     <>
+      <Switch
+        checkedChildren="展开"
+        unCheckedChildren="收起"
+        onChange={setcollapsed.bind(null, !collapsed)}
+      />
       <Menu
-        style={{ width: 200 }}
+        style={{ width: 200, marginTop: 10 }}
         menus={menus}
+        collapsed={collapsed}
         menuClick={(openkey, selectKey) => {
           console.log(openkey, selectKey);
         }}
-        openKey={['1']}
+        openKey={['1', '2', '2-1', '2-1-1']}
         selectKey={['1-2']}
       />
     </>

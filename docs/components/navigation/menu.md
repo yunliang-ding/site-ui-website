@@ -114,11 +114,12 @@ export default () => {
 
 # API
 
-| **属性名** | **类型**    | **描述**   | **默认** |
-| ---------- | ----------- | ---------- | -------- |
-| disabled   | boolean     | 是否禁用   | 20       |
-| onClick    | function(e) | 点击的回调 | 20       |
-| icon       | string      | 图标       | 20       |
-| loading    | boolean     | 是否加载   | 20       |
-| type       | string      | 主题       | 20       |
-| style      | object      | 样式       | 20       |
+| **属性名** | **类型**                     | **描述**     | **默认** |
+| ---------- | ---------------------------- | ------------ | -------- |
+| menus      | array                        | 菜单数据     | []       |
+| menuClick  | function(openKey, selectKey) | 菜单点击事件 | 无       |
+| openKey    | string[]                     | 样式         | 无       |
+| selectKey  | string[]                     | icon         | 无       |
+| style      | object                       | 点击回调     | 无       |
+| collapsed  | boolean                      | 是否收起     | false    |
+| theme      | string                       | light/dark   | light    |

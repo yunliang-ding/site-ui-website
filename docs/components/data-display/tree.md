@@ -69,7 +69,6 @@ export default () => {
           style={{
             width: 200,
             margin: '10px 0',
-            background: '#f9f9f9',
             marginRight: 50,
           }}
           treeData={treeData}
@@ -80,7 +79,10 @@ export default () => {
           }}
         />
         <Tree
-          style={{ width: 200, margin: '10px 0', background: '#f9f9f9' }}
+          style={{
+            width: 200,
+            margin: '10px 0',
+          }}
           treeData={treeData}
           disabled={disabled}
           checkable
@@ -104,12 +106,13 @@ export default () => {
 
 # API
 
-| **属性名** | **类型**                     | **描述**     | **默认** |
-| ---------- | ---------------------------- | ------------ | -------- |
-| menus      | array                        | 菜单数据     | []       |
-| menuClick  | function(openKey, selectKey) | 菜单点击事件 | 无       |
-| openKey    | string[]                     | 样式         | 无       |
-| selectKey  | string[]                     | icon         | 无       |
-| style      | object                       | 点击回调     | 无       |
-| collapsed  | boolean                      | 是否收起     | false    |
-| theme      | string                       | light/dark   | light    |
+| **属性名**   | **类型**               | **描述** | **默认** |
+| ------------ | ---------------------- | -------- | -------- |
+| treeData     | array                  | 菜单数据 | []       |
+| expandedKeys | string[]               | 展开节点 | 无       |
+| checkedKeys  | string[]               | 点击回调 | 无       |
+| disabled     | boolean                | 是否禁用 | false    |
+| onSelected   | function(key)          | 点击事件 | 无       |
+| onCheck      | function(checkedKeys)  | 选中事件 | 无       |
+| onExpand     | function(expandedKeys) | 展开事件 | 无       |
+| style        | object                 | 样式     | 无       |

@@ -14,7 +14,7 @@ export default () => {
     <>
       <Button
         onClick={() => {
-          message.success('成功提示成功提示s!');
+          message.success('成功提示!');
         }}
       >
         成功提示

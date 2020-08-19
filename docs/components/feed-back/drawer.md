@@ -25,7 +25,6 @@ export default () => {
       </>
     );
   };
-  console.log('setvisible', visible);
   return (
     <>
       <Button
@@ -100,20 +99,27 @@ export default () => {
         mask={mask}
         footer={footer}
         visible={visible}
-        content={
-          <>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-          </>
-        }
         onClose={() => {
-          console.log('close');
+          setvisible(false);
+          setplacement('right');
+          setheight('100vh');
+          setclosable(true);
+          setfooter(null);
+          setmask(true);
         }}
         onOk={() => {
-          console.log('ok');
+          setvisible(false);
+          setplacement('right');
+          setheight('100vh');
+          setclosable(true);
+          setfooter(null);
+          setmask(true);
         }}
-      />
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     </>
   );
 };

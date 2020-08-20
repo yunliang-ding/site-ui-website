@@ -83,6 +83,9 @@ export default () => {
         onClick={e => {
           console.log(e);
         }}
+        onRemove={e => {
+          console.log(e);
+        }}
       />
     </>
   );

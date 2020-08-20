@@ -281,6 +281,7 @@ export default () => {
       title: '应用名称',
       width: 220,
       dataIndex: 'application',
+      ellipsis: true,
     },
     {
       title: '应用名称',

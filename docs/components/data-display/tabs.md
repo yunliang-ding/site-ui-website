@@ -78,7 +78,7 @@ export default () => {
         style={{
           height: 300,
         }}
-        closeable
+        closable
         data={data}
         onClick={e => {
           console.log(e);
@@ -96,6 +96,6 @@ export default () => {
 | data       | array             | 数据源       | 无       |
 | activeKey  | string            | 选中的 key   | 无       |
 | style      | object            | 样式         | 无       |
-| closeable  | boolean           | 是否支持关闭 | false    |
+| closable   | boolean           | 是否支持关闭 | false    |
 | onClick    | function(visible) | 点击回调     | 无       |
 | onRemove   | function(visible) | 删除回调     | 无       |

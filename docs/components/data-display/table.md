@@ -361,7 +361,7 @@ export default () => {
       />
       <br />
       <Table
-        rowKey="key"
+        rowKey="id"
         dataSource={dataSource}
         columns={columns}
         style={{ height: 300 }}
@@ -734,7 +734,7 @@ export default () => {
   return (
     <>
       <Table
-        rowKey="key"
+        rowKey="id"
         bordered
         dataSource={dataSource}
         columns={columns}

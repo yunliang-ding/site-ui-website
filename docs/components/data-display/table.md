@@ -254,6 +254,7 @@ export default () => {
       title: 'ID',
       dataIndex: 'id',
       width: 110,
+      fixed: 'left',
     },
     {
       title: '姓名',
@@ -304,6 +305,7 @@ export default () => {
       title: '操作',
       dataIndex: 'opeartion',
       width: 150,
+      fixed: 'right',
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
           return (

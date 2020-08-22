@@ -38,9 +38,9 @@ import { Button, Icon } from 'site-ui';
 export default () => {
   return (
     <>
-      <Button type="primary" icon="iconsearchicon"></Button>
+      <Button type="primary" icon="suiconsearchicon"></Button>
       &nbsp;&nbsp;&nbsp;
-      <Button type="primary" icon="iconsearchicon">
+      <Button type="primary" icon="suiconsearchicon">
         Search
       </Button>
     </>

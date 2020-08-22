@@ -10,29 +10,23 @@ export default () => {
   const [loading, setloading] = useState(false);
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-        }}
-      >
-        <Spin loading={loading}>
-          <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
-            <Empty />
-          </div>
-        </Spin>
-        <Spin loading={loading} message="提示文案">
-          <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
-            <Empty label="加载区域" icon="iconsearchicon" />
-          </div>
-        </Spin>
-        <Spin loading={loading} icon="iconloading">
-          <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
-            <Empty label="显示时间" icon="icontime" />
-          </div>
-        </Spin>
-      </div>
+      <Spin loading={loading}>
+        <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
+          <Empty />
+        </div>
+      </Spin>
+      <br />
+      <Spin loading={loading} message="提示文案">
+        <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
+          <Empty label="加载区域" icon="suiconsearchicon" />
+        </div>
+      </Spin>
+      <br />
+      <Spin loading={loading} icon="suiconloading">
+        <div style={{ width: 400, height: 200, border: '1px solid #eee' }}>
+          <Empty label="显示时间" icon="suicontime" />
+        </div>
+      </Spin>
       <br />
       <Switch
         checkedChildren="关闭"

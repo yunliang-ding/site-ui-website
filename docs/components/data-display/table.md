@@ -334,6 +334,9 @@ export default () => {
       />
       <br />
       <br />
+      <Button>普通表格</Button>
+      <br />
+      <br />
       <Table
         rowKey="id"
         dataSource={dataSource}
@@ -343,6 +346,9 @@ export default () => {
         loading={loading}
       />
       <br />
+      <Button>自带分页</Button>
+      <br />
+      <br />
       <Table
         rowKey="id"
         dataSource={dataSource}
@@ -351,12 +357,18 @@ export default () => {
         loading={loading}
       />
       <br />
+      <Button>空数据</Button>
+      <br />
+      <br />
       <Table
         rowKey="id"
         columns={columns}
         style={{ height: 260 }}
         loading={loading}
       />
+      <br />
+      <Button>带边框</Button>
+      <br />
       <br />
       <Table
         rowKey="id"
@@ -366,6 +378,9 @@ export default () => {
         style={{ height: 260 }}
         loading={loading}
       />
+      <br />
+      <Button>支持选择</Button>
+      <br />
       <br />
       <Table
         rowKey="id"
@@ -379,6 +394,9 @@ export default () => {
         style={{ height: 260 }}
         loading={loading}
       />
+      <br />
+      <Button>自定义分页</Button>
+      <br />
       <br />
       <Table
         rowKey="id"

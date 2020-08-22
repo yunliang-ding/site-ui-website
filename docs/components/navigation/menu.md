@@ -16,12 +16,12 @@ export default () => {
   const menus = [
     {
       key: '1',
-      icon: 'iconicon_yingyongguanli',
+      icon: 'suiconicon_yingyongguanli',
       label: 'Navigation One',
       children: [
         {
           key: '1-1',
-          icon: 'iconmessage',
+          icon: 'suiconmessage',
           label: 'Option1',
         },
         {
@@ -32,7 +32,7 @@ export default () => {
     },
     {
       key: '2',
-      icon: 'iconhezi',
+      icon: 'suiconhezi',
       label: 'Navigation Two Navigation Two',
       children: [
         {
@@ -42,7 +42,7 @@ export default () => {
             {
               key: '2-1-1',
               label: 'Sub-Option1',
-              icon: 'iconempty',
+              icon: 'suiconempty',
               children: [
                 {
                   key: '2-1-1-1',
@@ -61,7 +61,7 @@ export default () => {
     },
     {
       key: '3',
-      icon: 'iconjiaohu',
+      icon: 'suiconjiaohu',
       label: 'Navigation Three',
       children: [
         {
@@ -73,7 +73,7 @@ export default () => {
     {
       key: '4',
       disabled: true,
-      icon: 'iconcloud-form',
+      icon: 'suiconcloud-form',
       label: 'Navigation Four',
       children: [
         {

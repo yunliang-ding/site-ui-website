@@ -33,8 +33,8 @@ export default () => {
       <Switch checkedChildren="1" unCheckedChildren="0" checked={false} />
       &nbsp; &nbsp; &nbsp;
       <Switch
-        checkedChildren={<Icon type="iconduihao" />}
-        unCheckedChildren={<Icon type="iconguanbi" />}
+        checkedChildren={<Icon type="suiconduihao" />}
+        unCheckedChildren={<Icon type="suiconguanbi" />}
       />
     </>
   );

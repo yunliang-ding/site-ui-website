@@ -39,7 +39,7 @@ import { Empty, Icon } from 'site-ui';
 export default () => {
   return (
     <>
-      <Empty icon="iconsearchicon" label={'查找信息为空'} />
+      <Empty icon="suiconsearchicon" label={'查找信息为空'} />
     </>
   );
 };

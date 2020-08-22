@@ -78,15 +78,15 @@ export default () => {
     <>
       <Input
         placeholder="邮箱"
-        prefix={<Icon size={18} type="iconweimingmingwenjianjia_rili" />}
+        prefix={<Icon size={18} type="suiconweimingmingwenjianjia_rili" />}
       />
       <br />
-      <Input placeholder="查找" suffix={<Icon type="iconsearchicon" />} />
+      <Input placeholder="查找" suffix={<Icon type="suiconsearchicon" />} />
       <br />
       <Input
         placeholder="发送到"
         prefix={
-          <Icon size={18} type="iconduihao" style={{ color: '#4569d4' }} />
+          <Icon size={18} type="suiconduihao" style={{ color: '#4569d4' }} />
         }
         suffix={'.com'}
       />
@@ -108,7 +108,7 @@ export default () => {
       <br />
       <Input
         placeholder="支持清除"
-        suffix={<Icon type="iconweimingmingwenjianjia_rili" />}
+        suffix={<Icon type="suiconweimingmingwenjianjia_rili" />}
         style={{ width: 300 }}
         allowClear
       />

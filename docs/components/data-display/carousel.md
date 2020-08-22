@@ -17,19 +17,19 @@ export default () => {
   };
   const pages = [
     <div style={style}>
-      <Icon type="iconpassword-visible" size={50} />
+      <Icon type="suiconpassword-visible" size={50} />
       page1
     </div>,
     <div style={style}>
-      <Icon type="iconweimingmingwenjianjia_rili" size={50} />
+      <Icon type="suiconweimingmingwenjianjia_rili" size={50} />
       page2
     </div>,
     <div style={style}>
-      <Icon type="iconempty" size={50} />
+      <Icon type="suiconempty" size={50} />
       page3
     </div>,
     <div style={style}>
-      <Icon type="iconpassword-invisible" size={50} />
+      <Icon type="suiconpassword-invisible" size={50} />
       page4
     </div>,
   ];
@@ -63,19 +63,19 @@ export default () => {
   };
   const pages = [
     <div style={style}>
-      <Icon type="iconpassword-visible" size={50} />
+      <Icon type="suiconpassword-visible" size={50} />
       page1
     </div>,
     <div style={style}>
-      <Icon type="iconweimingmingwenjianjia_rili" size={50} />
+      <Icon type="suiconweimingmingwenjianjia_rili" size={50} />
       page2
     </div>,
     <div style={style}>
-      <Icon type="iconempty" size={50} />
+      <Icon type="suiconempty" size={50} />
       page3
     </div>,
     <div style={style}>
-      <Icon type="iconpassword-invisible" size={50} />
+      <Icon type="suiconpassword-invisible" size={50} />
       page4
     </div>,
   ];

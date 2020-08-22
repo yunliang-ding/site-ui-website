@@ -23,7 +23,7 @@ export default () => {
       &nbsp;&nbsp;&nbsp;&nbsp;
       <Badge
         color="transparent"
-        count={<Icon color="red" type="iconpassword-visible" />}
+        count={<Icon color="red" type="suiconpassword-visible" />}
       >
         Icon
       </Badge>

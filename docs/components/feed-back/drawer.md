@@ -9,10 +9,10 @@ import { Drawer, Button } from 'site-ui';
 export default () => {
   const [visible, setvisible] = useState(false);
   const [placement, setplacement] = useState('right');
-  const [height, setheight] = useState('100vh');
   const [closable, setclosable] = useState(true);
   const [footer, setfooter] = useState(null);
   const [mask, setmask] = useState(true);
+  const [top, settop] = useState(0);
   const renderFooter = () => {
     return (
       <>
@@ -65,7 +65,7 @@ export default () => {
       <Button
         onClick={() => {
           setvisible(true);
-          setheight('calc(100vh - 64px)');
+          settop(64);
         }}
       >
         自定义高度
@@ -92,8 +92,8 @@ export default () => {
         title="Basic Drawer"
         style={{
           width: 500,
-          height,
         }}
+        top={top}
         placement={placement}
         closable={closable}
         mask={mask}
@@ -102,16 +102,16 @@ export default () => {
         onClose={() => {
           setvisible(false);
           setplacement('right');
-          setheight('100vh');
           setclosable(true);
+          settop(0);
           setfooter(null);
           setmask(true);
         }}
         onOk={() => {
           setvisible(false);
           setplacement('right');
-          setheight('100vh');
           setclosable(true);
+          settop(0);
           setfooter(null);
           setmask(true);
         }}

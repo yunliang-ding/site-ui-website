@@ -5,8 +5,9 @@
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Table, Button, Select } from 'site-ui';
+import { Table, Button, Select, Switch } from 'site-ui';
 export default () => {
+  const [loading, setloading] = useState(false);
   const dataSource = [
     {
       id: 10000,
@@ -325,12 +326,21 @@ export default () => {
   ];
   return (
     <>
+      <Switch
+        checkedChildren="关闭"
+        unCheckedChildren="开启"
+        checked={loading}
+        onChange={setloading.bind(null, !loading)}
+      />
+      <br />
+      <br />
       <Table
         rowKey="id"
         dataSource={dataSource}
         columns={columns}
         pagination={false}
         style={{ height: 260 }}
+        loading={loading}
       />
       <br />
       <Table
@@ -338,6 +348,14 @@ export default () => {
         dataSource={dataSource}
         columns={columns}
         style={{ height: 260 }}
+        loading={loading}
+      />
+      <br />
+      <Table
+        rowKey="id"
+        columns={columns}
+        style={{ height: 260 }}
+        loading={loading}
       />
       <br />
       <Table
@@ -346,6 +364,7 @@ export default () => {
         columns={columns}
         bordered
         style={{ height: 260 }}
+        loading={loading}
       />
       <br />
       <Table
@@ -358,6 +377,7 @@ export default () => {
           console.log(e);
         }}
         style={{ height: 260 }}
+        loading={loading}
       />
       <br />
       <Table
@@ -366,6 +386,7 @@ export default () => {
         columns={columns}
         style={{ height: 300 }}
         checkable
+        loading={loading}
         pagination={{
           current: 5,
           pageSize: 10,

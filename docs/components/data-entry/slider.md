@@ -19,6 +19,7 @@ export default () => {
         <Slider
           value={value}
           disabled={disabled}
+          tooltipVisible
           style={{ width: 300 }}
           onChange={value => {
             setvalue(value);

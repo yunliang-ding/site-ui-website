@@ -19,29 +19,40 @@ export default () => {
 
 ```jsx
 /**
- * title: 方向
+ * title: 方向/主题
  */
 import React, { useState } from 'react';
-import { Tooltip, Button, Icon } from 'site-ui';
+import { Tooltip, Button, Icon, Switch } from 'site-ui';
 export default () => {
+  const [theme, settheme] = useState('light');
   return (
     <>
-      <Tooltip title={<>这个是一个描述信息</>} placement="top">
+      <Switch
+        checked={theme === 'dark'}
+        onChange={settheme.bind(null, theme === 'light' ? 'dark' : 'light')}
+        checkedChildren="dark"
+        unCheckedChildren="light"
+      />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Tooltip title={<>这个是一个描述信息</>} placement="top" theme={theme}>
         <Button>Top</Button>
       </Tooltip>
       &nbsp;&nbsp;&nbsp;
-      <Tooltip title={<>这个是一个描述信息</>} placement="bottom">
+      <Tooltip title={<>这个是一个描述信息</>} placement="bottom" theme={theme}>
         <Button>Bottom</Button>
       </Tooltip>
       <br />
       <br />
       <br />
       <br />
-      <Tooltip title={<>这个是一个描述信息</>} placement="left">
+      <Tooltip title={<>这个是一个描述信息</>} placement="left" theme={theme}>
         <Button>Left</Button>
       </Tooltip>
       &nbsp;&nbsp;&nbsp;
-      <Tooltip title={<>这个是一个描述信息</>} placement="right">
+      <Tooltip title={<>这个是一个描述信息</>} placement="right" theme={theme}>
         <Button>Right</Button>
       </Tooltip>
     </>

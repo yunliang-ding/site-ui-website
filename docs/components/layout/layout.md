@@ -89,80 +89,11 @@ import React, { useState } from 'react';
 import { Layout, Button, Switch, Menu } from 'site-ui';
 import './index.css';
 const { Header, Sider, Content, Footer } = Layout;
+const { SubMenu } = Menu;
 export default () => {
   const [collapsible, setcollapsible] = useState(false);
   const [collapsed, setcollapsed] = useState();
   const [theme, settheme] = useState('light');
-  const menus = [
-    {
-      key: '1',
-      icon: 'suiconicon_yingyongguanli',
-      label: 'Navigation One',
-      children: [
-        {
-          key: '1-1',
-          icon: 'suiconmessage',
-          label: 'Option1',
-        },
-        {
-          key: '1-2',
-          label: 'Option2',
-        },
-      ],
-    },
-    {
-      key: '2',
-      icon: 'suiconhezi',
-      label: 'Navigation Two Navigation Two',
-      children: [
-        {
-          key: '2-1',
-          label: 'Option1',
-          children: [
-            {
-              key: '2-1-1',
-              label: 'Sub-Option1',
-              icon: 'suiconempty',
-              children: [
-                {
-                  key: '2-1-1-1',
-                  label: 'Sub-Option1-Option1',
-                },
-              ],
-            },
-            {
-              key: '2-1-2',
-              label: 'Sub-Option2',
-              disabled: true,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      key: '3',
-      icon: 'suiconjiaohu',
-      label: 'Navigation Three',
-      children: [
-        {
-          key: '3-1',
-          label: 'Option1',
-        },
-      ],
-    },
-    {
-      key: '4',
-      disabled: true,
-      icon: 'suiconcloud-form',
-      label: 'Navigation Four',
-      children: [
-        {
-          key: '4-1',
-          label: 'Option1',
-        },
-      ],
-    },
-  ];
   return (
     <>
       <Switch
@@ -180,20 +111,53 @@ export default () => {
           >
             <div className="logo">Logo</div>
             <Menu
-              menus={menus}
               theme={theme}
               collapsed={collapsed}
               collapsedWidth={80}
               menuClick={(openkey, selectKey) => {
                 console.log(openkey, selectKey);
               }}
-              openKey={['1', '2', '2-1', '2-1-1']}
+              openKey={['1']}
               selectKey={['1-2']}
-            />
+            >
+              <SubMenu
+                key="1"
+                icon="suiconicon_yingyongguanli"
+                title="Navigation One"
+              >
+                <Menu.Item key="1-1" icon="suiconmessage">
+                  Option 1
+                </Menu.Item>
+                <Menu.Item key="1-2">Option 2</Menu.Item>
+              </SubMenu>
+              <SubMenu key="2" icon="suiconhezi" title="Navigation Two">
+                <Menu.Item key="2-1">Option 1</Menu.Item>
+                <SubMenu key="2-2" title="Option 2">
+                  <Menu.Item key="2-2-1" icon="suiconempty">
+                    Option 1
+                  </Menu.Item>
+                  <Menu.Item key="2-2-2">Option 2</Menu.Item>
+                </SubMenu>
+              </SubMenu>
+              <SubMenu key="3" icon="suiconjiaohu" title="Navigation Three">
+                <Menu.Item key="3-1">Option 1</Menu.Item>
+              </SubMenu>
+              <SubMenu
+                key="4"
+                icon="suiconicon_yingyongguanli"
+                title="Navigation Four"
+              >
+                <Menu.Item key="4-1" icon="suiconcloud-form">
+                  Option 1
+                </Menu.Item>
+              </SubMenu>
+            </Menu>
           </Sider>
           <Layout>
             <Header>Header</Header>
-            <Content>Content</Content>
+            <Content>
+              <div className="main">Content</div>
+            </Content>
             <Footer>Site-UI ©2020 Created by DYL</Footer>
           </Layout>
         </Layout>

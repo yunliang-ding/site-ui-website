@@ -41,20 +41,26 @@
   height:800px;
   width:100%;
   margin:20px 0;
+  background-color: #eee;
 }
 .__dumidemo-admin-layout .sui-layout-header{
   display:flex;
   align-items: center;
   color:#333;
   background-color: #f8f8f8;
-  box-shadow: 0 8px 24px -2px rgba(0,0,0,.05);
 }
 .__dumidemo-admin-layout .sui-layout-content{
-  background-color: #fefefe;
+  background-color: #f2f2f2;
+  overflow: auto;
+  padding:20px;
+}
+.__dumidemo-admin-layout .sui-layout-content .main{
+  width:100%;
+  height:100%;
   display:flex;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  background-color: #fff;
 }
 .__dumidemo-admin-layout  .sui-layout-footer{
   display:flex;

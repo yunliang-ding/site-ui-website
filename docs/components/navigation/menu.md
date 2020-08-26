@@ -6,7 +6,80 @@ order: 1
 
 ```jsx
 /**
- * title: 基本使用
+ * title: 普通使用
+ */
+import React, { useState } from 'react';
+import { Menu, Icon, Switch } from 'site-ui';
+const { SubMenu } = Menu;
+export default () => {
+  const [collapsed, setcollapsed] = useState();
+  const [theme, settheme] = useState('light');
+  return (
+    <>
+      <Switch
+        checkedChildren="展开"
+        unCheckedChildren="收起"
+        onChange={setcollapsed.bind(null, !collapsed)}
+      />
+      &nbsp;&nbsp;&nbsp;
+      <Switch
+        checkedChildren="light"
+        unCheckedChildren="dark"
+        onChange={settheme.bind(null, theme === 'dark' ? 'light' : 'dark')}
+      />
+      <Menu
+        style={{ width: 240, margin: '10px 0' }}
+        theme={theme}
+        collapsed={collapsed}
+        menuClick={(openkey, selectKey) => {
+          console.log(openkey, selectKey);
+        }}
+        openKey={['1', '2', '2-1', '2-1-1']}
+        selectKey={['1-2']}
+      >
+        <SubMenu
+          key="1"
+          icon="suiconicon_yingyongguanli"
+          title="Navigation One"
+        >
+          <Menu.Item key="1-1" icon="suiconmessage">
+            Option 1
+          </Menu.Item>
+          <Menu.Item key="1-2">Option 2</Menu.Item>
+        </SubMenu>
+        <SubMenu key="2" icon="suiconhezi" title="Navigation Two">
+          <Menu.Item key="2-1">Option 1</Menu.Item>
+          <SubMenu key="2-2" title="Option 2">
+            <Menu.Item key="2-2-1" icon="suiconempty">
+              Option 1
+            </Menu.Item>
+            <Menu.Item key="2-2-2" disabled>
+              Option 2
+            </Menu.Item>
+          </SubMenu>
+        </SubMenu>
+        <SubMenu key="3" icon="suiconjiaohu" title="Navigation Three">
+          <Menu.Item key="3-1">Option 1</Menu.Item>
+        </SubMenu>
+        <SubMenu
+          key="4"
+          icon="suiconicon_yingyongguanli"
+          title="Navigation Four"
+          disabled
+        >
+          <Menu.Item key="4-1" icon="suiconcloud-form" disabled>
+            Option 1
+          </Menu.Item>
+        </SubMenu>
+      </Menu>
+    </>
+  );
+};
+```
+
+```jsx
+/**
+ * title: 数据渲染
  */
 import React, { useState } from 'react';
 import { Menu, Icon, Switch } from 'site-ui';
@@ -41,18 +114,18 @@ export default () => {
           children: [
             {
               key: '2-1-1',
-              label: 'Sub-Option1',
+              label: 'Option1',
               icon: 'suiconempty',
               children: [
                 {
                   key: '2-1-1-1',
-                  label: 'Sub-Option1-Option1',
+                  label: 'Option1',
                 },
               ],
             },
             {
               key: '2-1-2',
-              label: 'Sub-Option2',
+              label: 'Option2',
               disabled: true,
             },
           ],
@@ -114,9 +187,27 @@ export default () => {
 
 # API
 
+# SubMenu
+
+| **属性名** | **类型**  | **描述** | **默认** |
+| ---------- | --------- | -------- | -------- |
+| icon       | icon      | 图标     | 无       |
+| title      | ReactNode | 文案     | 无       |
+| disabled   | boolean   | 是否禁用 | false    |
+
+# Item
+
+| **属性名** | **类型**  | **描述** | **默认** |
+| ---------- | --------- | -------- | -------- |
+| icon       | icon      | 图标     | 无       |
+| title      | ReactNode | 文案     | 无       |
+| disabled   | boolean   | 是否禁用 | false    |
+
+# Menu
+
 | **属性名** | **类型**                     | **描述**     | **默认** |
 | ---------- | ---------------------------- | ------------ | -------- |
-| menus      | array                        | 菜单数据     | []       |
+| menus      | array                        | 菜单数据     | 无       |
 | menuClick  | function(openKey, selectKey) | 菜单点击事件 | 无       |
 | openKey    | string[]                     | 样式         | 无       |
 | selectKey  | string[]                     | icon         | 无       |

@@ -10,6 +10,47 @@ order: 5
  */
 import React, { useState } from 'react';
 import { Select, Switch } from 'site-ui';
+const { Option } = Select;
+export default () => {
+  const [disabled, setdisabled] = useState(false);
+  return (
+    <>
+      <Select disabled={disabled} placeholder="请选择">
+        <Option key="Html" value="Html">
+          Html
+        </Option>
+        <Option key="Css" value="Css">
+          Css
+        </Option>
+        <Option key="Java" value="Java">
+          Java
+        </Option>
+        <Option key="React" value="React">
+          React
+        </Option>
+        <Option key="Vue" value="Vue" disabled>
+          Vue
+        </Option>
+      </Select>
+      <br />
+      <br />
+      <Switch
+        checkedChildren="启用"
+        unCheckedChildren="禁用"
+        checked={!disabled}
+        onChange={setdisabled.bind(null, !disabled)}
+      />
+    </>
+  );
+};
+```
+
+```jsx
+/**
+ * title: 数据渲染
+ */
+import React, { useState } from 'react';
+import { Select, Switch } from 'site-ui';
 export default () => {
   const options = ['Html', 'Css', 'Java', 'React', 'Vue'];
   const [disabled, setdisabled] = useState(false);
@@ -172,6 +213,17 @@ export default () => {
 ```
 
 # API
+
+# Option
+
+| **属性名** | **类型**      | **描述**           | **默认** |
+| ---------- | ------------- | ------------------ | -------- |
+| label      | string        | 指定当前选中的条目 | 无       |
+| value      | string/number | 指定当前选中的条目 | 无       |
+| key        | string/number | key                | 无       |
+| disabled   | boolean       | 是否禁用           | false    |
+
+# Select
 
 | **属性名**           | **类型**                          | **描述**                            | **默认** |
 | -------------------- | --------------------------------- | ----------------------------------- | -------- |

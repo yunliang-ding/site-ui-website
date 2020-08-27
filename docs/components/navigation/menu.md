@@ -6,6 +6,57 @@ order: 1
 
 ```jsx
 /**
+ * title: 水平菜单
+ */
+import React, { useState } from 'react';
+import { Menu, Icon, Switch } from 'site-ui';
+const { SubMenu } = Menu;
+export default () => {
+  const [collapsed, setcollapsed] = useState();
+  const [theme, settheme] = useState('light');
+  return (
+    <>
+      <Switch
+        checkedChildren="light"
+        unCheckedChildren="dark"
+        onChange={settheme.bind(null, theme === 'dark' ? 'light' : 'dark')}
+      />
+      <br />
+      <br />
+      <Menu
+        theme={theme}
+        mode="horizontal"
+        collapsed={collapsed}
+        menuClick={(openkey, selectKey) => {
+          console.log(openkey, selectKey);
+        }}
+        selectKey={['1-2']}
+      >
+        <Menu.Item key="1" icon="suiconicon_yingyongguanli">
+          Menu-Nav 1
+        </Menu.Item>
+        <Menu.Item key="2" disabled icon="suiconempty">
+          Menu-Nav 2
+        </Menu.Item>
+        <Menu.Item key="3" icon="suiconhezi">
+          Menu-Nav 3
+        </Menu.Item>
+        <SubMenu key="4" icon="suiconjiaohu" title="Menu-Nav 4">
+          <Menu.Item key="4-1" icon="suiconcloud-form">
+            Option 1
+          </Menu.Item>
+          <Menu.Item key="4-2" icon="suiconweimingmingwenjianjia_rili" disabled>
+            Option 2
+          </Menu.Item>
+        </SubMenu>
+      </Menu>
+    </>
+  );
+};
+```
+
+```jsx
+/**
  * title: 普通使用
  */
 import React, { useState } from 'react';

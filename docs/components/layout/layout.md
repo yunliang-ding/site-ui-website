@@ -10,7 +10,7 @@ order: 1
  */
 import React, { useState } from 'react';
 import { Layout } from 'site-ui';
-import './index.css';
+import './index1.css';
 const { Header, Sider, Content, Footer } = Layout;
 export default () => {
   return (
@@ -83,11 +83,11 @@ export default () => {
 
 ```jsx
 /**
- * title: 标准后台布局
+ * title: 通用后台布局
  */
 import React, { useState } from 'react';
-import { Layout, Button, Switch, Menu } from 'site-ui';
-import './index.css';
+import { Layout, Button, Switch, Menu, Dropdown, Icon } from 'site-ui';
+import './index2.css';
 const { Header, Sider, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 export default () => {
@@ -101,7 +101,13 @@ export default () => {
         unCheckedChildren="dark"
         onChange={settheme.bind(null, theme === 'dark' ? 'light' : 'dark')}
       />
-      <div className="__dumidemo-admin-layout">
+      <div
+        className={
+          theme === 'dark'
+            ? '__dumidemo-standard-admin-layout __dumidemo-standard-admin-layout-dark'
+            : '__dumidemo-standard-admin-layout'
+        }
+      >
         <Layout>
           <Sider
             width={260}
@@ -154,7 +160,56 @@ export default () => {
             </Menu>
           </Sider>
           <Layout>
-            <Header>Header</Header>
+            <Header>
+              <Menu
+                theme={theme}
+                mode="horizontal"
+                collapsed={collapsed}
+                menuClick={(openkey, selectKey) => {
+                  console.log(openkey, selectKey);
+                }}
+                selectKey={['1-2']}
+              >
+                <Menu.Item key="1" icon="suiconicon_yingyongguanli">
+                  Menu-Nav 1
+                </Menu.Item>
+                <Menu.Item key="2" disabled icon="suiconempty">
+                  Menu-Nav 2
+                </Menu.Item>
+                <Menu.Item key="3" icon="suiconhezi">
+                  Menu-Nav 3
+                </Menu.Item>
+                <SubMenu key="4" icon="suiconjiaohu" title="Menu-Nav 4">
+                  <Menu.Item key="4-1" icon="suiconcloud-form">
+                    Option 1
+                  </Menu.Item>
+                  <Menu.Item
+                    key="4-2"
+                    icon="suiconweimingmingwenjianjia_rili"
+                    disabled
+                  >
+                    Option 2
+                  </Menu.Item>
+                </SubMenu>
+              </Menu>
+              <Dropdown
+                overlay={
+                  <>
+                    {['@site-ui', 'logout'].map(item => {
+                      return (
+                        <p key={item} style={{ fontSize: 12, padding: 4 }}>
+                          {item}
+                        </p>
+                      );
+                    })}
+                  </>
+                }
+              >
+                <div className="user">
+                  <Icon type="suiconuser" size={20} />
+                </div>
+              </Dropdown>
+            </Header>
             <Content>
               <div className="main">Content</div>
             </Content>

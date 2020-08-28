@@ -6,43 +6,152 @@ order: 14
 
 ```jsx
 /**
- * title: 基本使用
+ * title: 基本使用 JSON2Form
  */
 import React, { useState } from 'react';
-import { Input, Form } from 'site-ui';
+import { Form } from 'site-ui';
 export default () => {
-  const submit = async (error, values) => {
-    return new Promise(res => {
-      setTimeout(() => {
-        res();
-      }, 2000);
-    });
-  };
+  const fields = [
+    {
+      type: 'Input',
+      name: 'username',
+      label: '名称',
+      sort: 1,
+      props: {
+        placeholder: '请输入名称',
+        value: '测试用户名称',
+        rules: [
+          {
+            required: true,
+            message: '名称不能为空',
+          },
+          {
+            pattern: '^[0-9]+(.[0-9]{1,2})?$',
+            message: '请输入合法的字符',
+          },
+        ],
+      },
+    },
+    {
+      type: 'CheckboxGroup',
+      sort: 5,
+      name: 'like',
+      label: '爱好',
+      props: {
+        options: [
+          { key: 1, label: '听歌', value: 1 },
+          { key: 2, label: '跑步', value: 2 },
+        ],
+        initialValue: [1, 2],
+        rules: [
+          {
+            required: true,
+            message: '爱好不能为空',
+          },
+        ],
+      },
+    },
+    {
+      type: 'RadioGroup',
+      sort: 6,
+      name: 'sex',
+      label: '性别',
+      props: {
+        value: 1,
+        rules: [
+          {
+            required: true,
+            message: '性别不能为空',
+          },
+        ],
+        options: [
+          { key: 1, label: '男', value: 1 },
+          { key: 2, label: '女', value: 2 },
+        ],
+      },
+    },
+    {
+      type: 'Select',
+      sort: 2,
+      name: 'types',
+      label: '类型',
+      props: {
+        value: 1,
+        rules: [
+          {
+            required: true,
+            message: '类型不能为空',
+          },
+        ],
+        options: [
+          { key: 1, label: 'Html5', value: 1 },
+          { key: 2, label: 'Css3', value: 2, disabled: true },
+          { key: 3, label: 'React', value: 3 },
+        ],
+      },
+    },
+    {
+      type: 'DatePicker',
+      sort: 3,
+      name: 'startDate',
+      label: '活动开始日期',
+      props: {
+        value: '2020-08-20',
+        rules: [
+          {
+            required: true,
+            message: '活动开始日期不能为空',
+          },
+        ],
+        placeholder: '请输入活动开始日期',
+      },
+    },
+    {
+      type: 'TimePicker',
+      sort: 4,
+      name: 'startTime',
+      label: '活动开始时间',
+      props: {
+        value: '',
+        rules: [
+          {
+            required: true,
+            message: '活动开始时间不能为空',
+          },
+        ],
+        placeholder: '开始时间',
+      },
+    },
+  ];
+  const btns = [
+    {
+      label: '提交',
+      type: 'submit',
+      props: {
+        type: 'primary',
+      },
+    },
+    {
+      label: '取消',
+      type: 'reset',
+      props: {
+        type: 'primary',
+        ghost: true,
+        style: {
+          marginLeft: 20,
+        },
+      },
+    },
+  ];
   return (
     <>
-      <Form onSubmit={submit} onSubmitText="保存">
-        <Form.Field
-          label="姓名"
-          initialValue="张三"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input placeholder="请输入姓名" />
-        </Form.Field>
-        <Form.Field
-          label="邮箱"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input placeholder="请输入邮箱" />
-        </Form.Field>
-      </Form>
+      <Form
+        fields={fields}
+        btns={btns}
+        onEvent={(type, values) => {
+          console.log(type, values);
+        }}
+      />
     </>
   );
 };
@@ -50,19 +159,8 @@ export default () => {
 
 # API
 
-| **属性名**   | **类型**    | **描述**               | **默认** |
-| ------------ | ----------- | ---------------------- | -------- |
-| addonAfter   | ReactNode   | 设置前置标签           | 无       |
-| addonBefore  | ReactNode   | 设置后置标签           | 无       |
-| value        | string      | 输入框默认内容         | 无       |
-| disabled     | boolean     | 是否禁用状态           | false    |
-| maxLength    | number      | 最大长度               | 无       |
-| prefix       | ReactNode   | 带有前缀图标的         | 无       |
-| suffix       | ReactNode   | 带有后缀图标的         | 无       |
-| type         | string      | text/password/textarea | text     |
-| allowClear   | boolean     | 支持清除               | false    |
-| onChange     | function(e) | 输入框内容变化时的回调 | 无       |
-| onPressEnter | function(e) | 按下回车的回调         | 无       |
-| onBlur       | function(e) | 输入框得到焦点         | 无       |
-| onFocus      | function(e) | 输入框失去焦点         | 无       |
-| style        | Object      | 样式                   | 无       |
+| **属性名** | **类型**               | **描述**     | **默认** |
+| ---------- | ---------------------- | ------------ | -------- |
+| fields     | array                  | 表单组       | []       |
+| btns       | array                  | 按钮组       | []       |
+| onEvent    | function(type, values) | 按钮点击回调 | 无       |

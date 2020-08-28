@@ -14,12 +14,9 @@ export default () => {
   const fields = [
     {
       type: 'Input',
-      name: 'username',
-      label: '名称',
       sort: 1,
-      props: {
-        placeholder: '请输入名称',
-        value: '测试用户名称',
+      field: {
+        label: '名称',
         rules: [
           {
             required: true,
@@ -31,18 +28,17 @@ export default () => {
           },
         ],
       },
+      props: {
+        name: 'username',
+        placeholder: '请输入名称',
+        value: '测试用户名称',
+      },
     },
     {
       type: 'CheckboxGroup',
       sort: 5,
-      name: 'like',
-      label: '爱好',
-      props: {
-        options: [
-          { key: 1, label: '听歌', value: 1 },
-          { key: 2, label: '跑步', value: 2 },
-        ],
-        initialValue: [1, 2],
+      field: {
+        label: '爱好',
         rules: [
           {
             required: true,
@@ -50,39 +46,55 @@ export default () => {
           },
         ],
       },
+      props: {
+        name: 'like',
+        options: [
+          { key: 1, label: '听歌', value: 1 },
+          { key: 2, label: '跑步', value: 2 },
+        ],
+        value: [1, 2],
+      },
     },
     {
       type: 'RadioGroup',
       sort: 6,
-      name: 'sex',
-      label: '性别',
-      props: {
-        value: 1,
+      field: {
+        label: '性别',
         rules: [
           {
             required: true,
             message: '性别不能为空',
           },
         ],
+      },
+      props: {
+        name: 'sex',
+        value: 1,
         options: [
           { key: 1, label: '男', value: 1 },
           { key: 2, label: '女', value: 2 },
         ],
+        style: {
+          height: 26,
+          lineHeight: '20px',
+        },
       },
     },
     {
       type: 'Select',
       sort: 2,
-      name: 'types',
-      label: '类型',
-      props: {
-        value: 1,
+      field: {
+        label: '类型',
         rules: [
           {
             required: true,
             message: '类型不能为空',
           },
         ],
+      },
+      props: {
+        name: 'types',
+        value: 1,
         options: [
           { key: 1, label: 'Html5', value: 1 },
           { key: 2, label: 'Css3', value: 2, disabled: true },
@@ -93,32 +105,37 @@ export default () => {
     {
       type: 'DatePicker',
       sort: 3,
-      name: 'startDate',
-      label: '活动开始日期',
-      props: {
-        value: '2020-08-20',
+      field: {
+        label: '开始日期',
+        validateStatus: 'error',
         rules: [
           {
             required: true,
             message: '活动开始日期不能为空',
           },
         ],
+      },
+      props: {
+        name: 'startDate',
+        value: '2020-08-20',
         placeholder: '请输入活动开始日期',
       },
     },
     {
       type: 'TimePicker',
       sort: 4,
-      name: 'startTime',
-      label: '活动开始时间',
-      props: {
-        value: '',
+      field: {
+        label: '开始时间',
         rules: [
           {
             required: true,
             message: '活动开始时间不能为空',
           },
         ],
+      },
+      props: {
+        value: '',
+        name: 'startTime',
         placeholder: '开始时间',
       },
     },

@@ -6,10 +6,13 @@ order: 14
 
 ```jsx
 /**
- * title: 基本使用 JSON2Form
+ * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Form } from 'site-ui';
+import { Form, Message } from 'site-ui';
+const message = new Message({
+  duration: 3,
+});
 export default () => {
   const fields = [
     {
@@ -25,7 +28,7 @@ export default () => {
           },
           {
             pattern: '^[0-9]+(.[0-9]{1,2})?$',
-            message: '请输入合法的字符',
+            message: '名称格式异常',
           },
         ],
       },
@@ -152,6 +155,17 @@ export default () => {
       },
     },
   ];
+  const [loading, setloading] = useState(false);
+  const submit = async () => {
+    setloading(true);
+    await new Promise(res => {
+      setTimeout(() => {
+        message.success('保存成功!');
+        res();
+      }, 1000);
+    });
+    setloading(false);
+  };
   return (
     <>
       <Form
@@ -160,8 +174,15 @@ export default () => {
         onValueChanges={(name, value) => {
           console.log(name, value);
         }}
+        loading={loading}
         onBtnClick={(type, error, values) => {
           console.log(type, error, values);
+          if (type === 'submit') {
+            if (!error) {
+              // 提交
+              submit();
+            }
+          }
         }}
       />
     </>

@@ -9,7 +9,7 @@ order: 9
  * title: 基本使用
  */
 import React, { useState } from 'react';
-import { Button, Dropdown, Icon } from 'site-ui';
+import { Dropdown, Icon } from 'site-ui';
 export default () => {
   const overlay = ['Html', 'Css', 'React', 'Vue'].map(item => {
     return (
@@ -20,9 +20,7 @@ export default () => {
   });
   return (
     <>
-      <Dropdown overlay={overlay}>
-        <Button>Click me</Button>
-      </Dropdown>
+      <Dropdown overlay={overlay}>Click me</Dropdown>
     </>
   );
 };
@@ -30,12 +28,7 @@ export default () => {
 
 # API
 
-| **属性名**     | **类型**        | **描述**     | **默认** |
-| -------------- | --------------- | ------------ | -------- |
-| value          | number          | 值           | 0        |
-| disabled       | boolean         | 是否禁用     | false    |
-| tooltipVisible | boolean         | 是否显示进度 | false    |
-| onChange       | function(value) | 改变后的回调 | 无       |
-| min            | number          | 开始区间     | 0        |
-| max            | number          | 结束区间     | 100      |
-| style          | object          | 滑块样式     | 无       |
+| **属性名** | **类型**  | **描述**    | **默认** |
+| ---------- | --------- | ----------- | -------- |
+| overlay    | ReactNode | 渲染的 body | 无       |
+| style      | object    | 滑块样式    | 无       |

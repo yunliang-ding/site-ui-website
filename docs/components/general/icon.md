@@ -81,4 +81,4 @@ export default () => {
 | color      | stirng      | 字体颜色 | 无       |
 | style      | Object      | 样式     | 无       |
 | type       | string      | icon     | 无       |
-| onClick    | function(e) | 点击回调 | 无       |
+| onClick    | Function(e) | 点击回调 | 无       |

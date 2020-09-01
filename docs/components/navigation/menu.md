@@ -259,7 +259,7 @@ export default () => {
 | **属性名** | **类型**                     | **描述**     | **默认** |
 | ---------- | ---------------------------- | ------------ | -------- |
 | menus      | array                        | 菜单数据     | 无       |
-| menuClick  | function(openKey, selectKey) | 菜单点击事件 | 无       |
+| menuClick  | Function(openKey, selectKey) | 菜单点击事件 | 无       |
 | openKey    | string[]                     | 样式         | 无       |
 | selectKey  | string[]                     | icon         | 无       |
 | style      | object                       | 点击回调     | 无       |

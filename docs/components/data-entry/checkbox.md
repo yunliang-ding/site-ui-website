@@ -103,7 +103,7 @@ export default () => {
 | ---------- | ----------- | ---------------------- | -------- |
 | checked    | boolean     | 指定当前是否选中       | 无       |
 | disabled   | boolean     | 失效状态               | 无       |
-| onChange   | function(e) | 输入框内容变化时的回调 | 无       |
+| onChange   | Function(e) | 输入框内容变化时的回调 | 无       |
 | style      | Object      | 样式                   | 无       |
 | name       | string      | 样式                   | 无       |
 
@@ -113,7 +113,7 @@ export default () => {
 | ---------- | --------------- | ---------------------- | -------- |
 | value      | string[]        | 指定选中的选项         | 无       |
 | disabled   | boolean         | 失效状态               | 无       |
-| onChange   | function(value) | 输入框内容变化时的回调 | 无       |
+| onChange   | Function(value) | 输入框内容变化时的回调 | 无       |
 | name       | string          | 样式                   | 无       |
 | options    | string[]        | 指定可选项             | 无       |
 | style      | Object          | 样式                   | 无       |

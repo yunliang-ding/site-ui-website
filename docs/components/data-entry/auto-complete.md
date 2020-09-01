@@ -52,4 +52,4 @@ export default () => {
 | style             | object                  | 输入框 style 属性     | 无       |
 | dropdownClassName | object                  | 下拉菜单的 style 属性 | 无       |
 | dropdownStyle     | object                  | 下拉菜单的 style 属性 | 无       |
-| onChange          | function(value, option) | 选中 option           | 无       |
+| onChange          | Function(value, option) | 选中 option           | 无       |

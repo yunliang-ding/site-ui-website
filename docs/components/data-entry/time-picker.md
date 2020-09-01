@@ -58,5 +58,5 @@ export default () => {
 | dropdownClassName | object                  | 下拉菜单的 style 属性                 | 无       |
 | dropdownStyle     | object                  | 下拉菜单的 style 属性                 | 无       |
 | open              | boolean                 | 是否展开下拉菜单                      | false    |
-| onChange          | function(value, option) | 选中 option，或 input 的 value 变化   | 无       |
+| onChange          | Function(value, option) | 选中 option，或 input 的 value 变化   | 无       |
 | fieldNames        | object                  | 自定义 options 中 label name children | 无       |

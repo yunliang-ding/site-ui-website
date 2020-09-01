@@ -70,5 +70,5 @@ export default () => {
 | overlayStyle     | object            | 样式           | 无       |
 | innerStyle       | object            | 内部盒子样式   | 无       |
 | visible          | boolean           | 是否显示       | false    |
-| onVisibleChange  | function(visible) | 显示改变的回调 | 无       |
+| onVisibleChange  | Function(visible) | 显示改变的回调 | 无       |
 | theme            | string            | light/dark     | light    |

@@ -52,8 +52,8 @@ export default () => {
 | placeholder  | string                  | 提示文案           | 无       |
 | allowClear   | boolean                 | 支持清除           | true     |
 | style        | object                  | 输入框 style 属性  | 无       |
-| onChange     | function(value, option) | 选中 option        | 无       |
+| onChange     | Function(value, option) | 选中 option        | 无       |
 | addonAfter   | ReactNode               | 设置前置标签       | 无       |
 | addonBefore  | ReactNode               | 设置后置标签       | 无       |
 | disabled     | boolean                 | 是否禁用状态       | false    |
-| disabledDate | function(e)             | 禁用日期           | false    |
+| disabledDate | Function(e)             | 禁用日期           | false    |

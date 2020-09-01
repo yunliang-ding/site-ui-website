@@ -792,5 +792,5 @@ export default () => {
 | activeKey  | string            | 选中的 key   | 无       |
 | style      | object            | 样式         | 无       |
 | closable   | boolean           | 是否支持关闭 | false    |
-| onClick    | function(visible) | 点击回调     | 无       |
-| onRemove   | function(visible) | 删除回调     | 无       |
+| onClick    | Function(visible) | 点击回调     | 无       |
+| onRemove   | Function(visible) | 删除回调     | 无       |

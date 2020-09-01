@@ -237,11 +237,11 @@ export default () => {
 | style                | object                            | 输入框 style 属性                   | 无       |
 | dropdownClassName    | object                            | 下拉菜单的 style 属性               | 无       |
 | dropdownStyle        | object                            | 下拉菜单的 style 属性               | 无       |
-| filter               | boolean/function(option,value)    | 是否支持过滤/自定义过滤             | false    |
+| filter               | boolean/Function(option,value)    | 是否支持过滤/自定义过滤             | false    |
 | getPopupContainer    | Function(dom) () => document.body | 菜单渲染父节点                      | 无       |
 | multiple             | boolean                           | 是否支持多选                        | true     |
 | showArrow            | boolean                           | 是否显示下拉小箭头                  | true     |
 | showSearch           | boolean                           | 使单选模式可搜索                    | false    |
 | open                 | boolean                           | 是否展开下拉菜单                    | false    |
-| onChange             | function(value, option)           | 选中 option，或 input 的 value 变化 | 无       |
-| onSearch             | function(value:string)            | 文本框值变化时回调                  | 无       |
+| onChange             | Function(value, option)           | 选中 option，或 input 的 value 变化 | 无       |
+| onSearch             | Function(value:string)            | 文本框值变化时回调                  | 无       |

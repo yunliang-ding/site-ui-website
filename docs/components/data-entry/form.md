@@ -17,23 +17,24 @@ export default () => {
   const fields = [
     {
       type: 'Input',
-      name: 'username',
+      name: 'userno',
       sort: 1,
+      changeValidate: false,
       field: {
-        label: '名称',
+        label: '编号',
         rules: [
           {
             required: true,
-            message: '名称不能为空',
+            message: '编号不能为空',
           },
           {
             pattern: '^[0-9]+(.[0-9]{1,2})?$',
-            message: '名称格式异常',
+            message: '请输入数字',
           },
         ],
       },
       props: {
-        placeholder: '请输入名称',
+        placeholder: '请输入编号',
         style: {
           width: 160,
         },
@@ -148,15 +149,6 @@ export default () => {
       },
     },
   ];
-  const btns = [
-    {
-      label: '提交',
-      type: 'submit',
-      props: {
-        type: 'primary',
-      },
-    },
-  ];
   const [loading, setloading] = useState(false);
   const [formInstance, setformInstance] = useState({}); // form 实例
   const submit = async () => {
@@ -184,7 +176,7 @@ export default () => {
         type="primary"
         loading={loading}
         onClick={() => {
-          formInstance.validateForm(({ errors, values }) => {
+          formInstance.validateFields(({ errors, values }) => {
             if (!errors) {
               submit();
             }
@@ -193,6 +185,8 @@ export default () => {
       >
         保存
       </Button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <Button onClick={formInstance.resetFields}>重置</Button>
     </>
   );
 };
@@ -211,23 +205,24 @@ export default () => {
   const fields = [
     {
       type: 'Input',
-      name: 'username',
+      name: 'userno',
       sort: 1,
+      changeValidate: false,
       field: {
-        label: '名称',
+        label: '编号',
         rules: [
           {
             required: true,
-            message: '名称不能为空',
+            message: '编号不能为空',
           },
           {
             pattern: '^[0-9]+(.[0-9]{1,2})?$',
-            message: '名称格式异常',
+            message: '请输入数字',
           },
         ],
       },
       props: {
-        placeholder: '请输入名称',
+        placeholder: '请输入编号',
         style: {
           width: 160,
         },
@@ -367,12 +362,12 @@ export default () => {
           setformInstance(e);
         }}
       />
+      <br />
       <Button
         type="primary"
         loading={loading}
         onClick={() => {
-          console.log(formInstance);
-          formInstance.validateForm(({ errors, values }) => {
+          formInstance.validateFields(({ errors, values }) => {
             if (!errors) {
               submit();
             }
@@ -381,6 +376,8 @@ export default () => {
       >
         保存
       </Button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <Button onClick={formInstance.resetFields}>重置</Button>
     </>
   );
 };
@@ -388,22 +385,41 @@ export default () => {
 
 # API
 
+# Form
+
+| **属性名**     | **类型**              | **描述**                      | **默认** |
+| -------------- | --------------------- | ----------------------------- | -------- |
+| fields         | array                 | 表单组                        | []       |
+| onLoad         | Function(Instance)    | 表单实例                      | {}       |
+| onValueChanges | Function(name, value) | 表单任何的修改回调            | 无       |
+| flex           | boolean               | 是否采用 flex 布局            | false    |
+| columns        | number                | flex 布局的列数(仅 flex 有效) | 2        |
+
+# Instance
+
+| **属性名**     | **类型**                           | **描述**     | **默认** |
+| -------------- | ---------------------------------- | ------------ | -------- |
+| validateFields | (callback(errors, values)) => void | 校验表单     | 无       |
+| resetFields    | Function                           | 重置表单     | 无       |
+| getFieldsValue | Function([fieldNames: string[])    | 获取所有的值 | 无       |
+| getFieldValue  | Function(fieldName: string)        | 获取指定的值 | 无       |
+
 # Fields
+
+| **属性名**     | **类型** | **描述**               | **默认** |
+| -------------- | -------- | ---------------------- | -------- |
+| type           | string   | 表单组件类型           |          |
+| name           | string   | 表单 name              |          |
+| changeValidate | boolean  | 是否 onChange 立即校验 | true     |
+| field          | object   | 字段规则               |          |
+| props          | object   | 表单组件 props         |          |
+
+# Field
 
 | **属性名**   | **类型**  | **描述**                     | **默认** |
 | ------------ | --------- | ---------------------------- | -------- |
 | label        | string    | 字段文案                     | []       |
-| rules        | array     | 交验规则                     | []       |
+| rules        | array     | 校验规则                     | []       |
 | style        | object    | 设置字段样式                 | 无       |
 | tooltips     | boolean   | 是否有提示                   | false    |
 | tooltipsText | ReactNode | 提示的文案(仅 tooltips 有效) | 无       |
-
-# Form
-
-| **属性名**     | **类型**                                           | **描述**                      | **默认** |
-| -------------- | -------------------------------------------------- | ----------------------------- | -------- |
-| fields         | array                                              | 表单组                        | []       |
-| onLoad         | function(instance:{validateForm((error, values))}) | 表单交验                      | 无       |
-| onValueChanges | function(name, value)                              | 表单任何的修改回调            | 无       |
-| flex           | boolean                                            | 是否采用 flex 布局            | false    |
-| columns        | number                                             | flex 布局的列数(仅 flex 有效) | 2        |

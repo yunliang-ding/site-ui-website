@@ -95,12 +95,16 @@ export default () => {
 
 # API
 
-| **属性名**  | **类型**             | **描述**       | **默认** |
-| ----------- | -------------------- | -------------- | -------- |
-| style       | object               | 样式           | 无       |
-| pages       | ReactNode[]          | 每一页的结构   | 无       |
-| effect      | string               | 模式：fade     | 无       |
-| currentPage | number               | 当前页码       | 1        |
-| onChange    | funcito(currentPage) | 页码改变的回调 | 无       |
-| autoPlay    | boolean              | 自动播放       | false    |
-| showArrow   | boolean              | 展示箭头       | false    |
+| **属性名**   | **类型**             | **描述**        | **默认** |
+| ------------ | -------------------- | --------------- | -------- |
+| style        | object               | 样式            | 无       |
+| pages        | ReactNode[]          | 每一页的结构    | 无       |
+| effect       | string               | 模式：fade      | 无       |
+| currentPage  | number               | 当前页码        | 1        |
+| onChange     | funcito(currentPage) | 页码改变的回调  | 无       |
+| autoPlay     | boolean              | 自动播放        | false    |
+| autoPlayTime | number               | 自动播放间隔 ms | 3000     |
+| showArrow    | boolean              | 展示箭头        | false    |
+| legend       | boolean              | 是否展示        | true     |
+| loop         | boolean              | 是否循环轮播    | true     |
+| swipe        | boolean              | 是否开启滑动    | true     |

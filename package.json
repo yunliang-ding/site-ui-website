@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "site-ui":"^0.0.1"
+    "site-ui":"0.0.6"
   },
   "devDependencies": {
     "dumi": "^1.0.9",
